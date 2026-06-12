@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tokens de design da Uniko Clinic */
+@theme {
+  /* Cores da marca */
+  --color-vinho: #44020D;
+  --color-vinho-light: #6B0A1A;
+  --color-vinho-dark: #2A0108;
+  --color-nude: #FEECD4;
+  --color-nude-dark: #F5D9B8;
+  --color-gold: #C9A070;
+  --color-gold-light: #E8D5A3;
+  --color-gold-dark: #A87840;
+
+  /* Tipografia */
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-script: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-jost), 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-jost), 'Jost', ui-sans-serif, system-ui, sans-serif;
+
+  /* Gradientes dourados */
+  --background-image-gold-gradient: linear-gradient(135deg, #C9A070 0%, #E8D5A3 50%, #C9A070 100%);
+  --background-image-gold-gradient-h: linear-gradient(90deg, #C9A070, #E8D5A3);
+  --background-image-hero-overlay: linear-gradient(to bottom, rgba(68,2,13,0.40), rgba(68,2,13,0.80));
+
+  /* Sombras */
+  --shadow-card: 0 4px 24px 0 rgba(68,2,13,0.08);
+  --shadow-card-hover: 0 8px 32px 0 rgba(68,2,13,0.16);
+  --shadow-glow: 0 0 32px 0 rgba(201,160,112,0.30);
+
+  /* Bordas */
+  --radius-card: 0.75rem;
+  --radius-pill: 9999px;
+
+  /* Tamanhos de texto display (fluid com clamp) */
+  --text-display-xl: clamp(2.5rem, 6vw, 5rem);
+  --text-display-lg: clamp(2rem, 4vw, 3.5rem);
+  --text-display-md: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset e estilos base */
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FEECD4;
+  color: #44020D;
+}
+
+/* Texto com gradiente dourado */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A070 0%, #E8D5A3 50%, #C9A070 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Aspas tipográficas decorativas */
+.quote-mark::before {
+  content: '"';
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  font-size: 4rem;
+  line-height: 0;
+  color: #C9A070;
+  opacity: 0.4;
+  vertical-align: -1rem;
+  margin-right: 0.25rem;
 }
