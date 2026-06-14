@@ -238,17 +238,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Depoimentos */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-nude-dark">
-        <div className="max-w-7xl mx-auto flex flex-col gap-12">
-          <SectionTitle title="O que dizem nossas pacientes" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {depoimentos.slice(0, 6).map((d) => (
-              <TestimonialCard key={d.id} depoimento={d} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Depoimentos — exibidos apenas quando houver depoimentos autorizados */}
+      {(() => {
+        const autorizados = depoimentos.filter(d => d.autorizado)
+        if (autorizados.length === 0) return null
+        return (
+          <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-nude-dark">
+            <div className="max-w-7xl mx-auto flex flex-col gap-12">
+              <SectionTitle title="O que dizem nossas pacientes" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {autorizados.map((d) => (
+                  <TestimonialCard key={d.id} depoimento={d} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* CTA */}
       <CTABanner

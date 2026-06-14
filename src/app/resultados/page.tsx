@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import CTABanner from '@/components/sections/CTABanner'
 import SectionTitle from '@/components/ui/SectionTitle'
 import TestimonialCard from '@/components/cards/TestimonialCard'
-import BeforeAfterCard from '@/components/cards/BeforeAfterCard'
 import { depoimentos } from '@/data/depoimentos'
-import { tratamentos } from '@/data/tratamentos'
 
 export const metadata: Metadata = {
   title: 'Resultados',
@@ -13,13 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/resultados' },
 }
 
-const resultadosExemplo = tratamentos.slice(0, 6).map(t => ({
-  tratamento: t.nome,
-  imagemAntes: '',
-  imagemDepois: '',
-}))
-
 export default function ResultadosPage() {
+  const depoimentosAutorizados = depoimentos.filter(d => d.autorizado)
+
   return (
     <>
       {/* Hero */}
@@ -45,42 +39,49 @@ export default function ResultadosPage() {
         </div>
       </div>
 
-      {/* Galeria antes e depois */}
+      {/* Galeria em breve */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col gap-12">
+        <div className="max-w-3xl mx-auto flex flex-col items-center gap-8 text-center">
           <SectionTitle
             title="Antes & Depois"
             subtitle="Resultados naturais e harmoniosos — porque cada beleza é única."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {resultadosExemplo.map((r, i) => (
-              <BeforeAfterCard
-                key={i}
-                tratamento={r.tratamento}
-                imagemAntes={r.imagemAntes}
-                imagemDepois={r.imagemDepois}
-              />
-            ))}
+          <div className="w-full rounded-card border border-vinho/10 bg-nude-dark p-10 flex flex-col items-center gap-4">
+            <div className="h-px w-12 bg-gold-gradient" aria-hidden="true" />
+            <p className="font-sans text-vinho/70 text-base leading-relaxed">
+              Os resultados autorizados serão publicados em breve.<br />
+              Cada imagem é divulgada somente com consentimento expresso da paciente.
+            </p>
+            <p className="font-sans text-vinho/50 text-sm">
+              Acompanhe os resultados no Instagram:{' '}
+              <a
+                href="https://www.instagram.com/unikoclinic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold underline hover:text-gold-dark transition-colors"
+              >
+                @unikoclinic
+              </a>
+            </p>
           </div>
-          <p className="font-sans text-xs text-center text-vinho/40">
-            Novas fotos são adicionadas regularmente. Siga <a href="https://www.instagram.com/unikoclinic" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold transition-colors">@unikoclinic</a> para acompanhar os resultados.
-          </p>
         </div>
       </section>
 
-      {/* Depoimentos */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-nude-dark">
-        <div className="max-w-7xl mx-auto flex flex-col gap-12">
-          <SectionTitle
-            title="O que dizem nossas pacientes"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {depoimentos.map(d => (
-              <TestimonialCard key={d.id} depoimento={d} />
-            ))}
+      {/* Depoimentos — exibidos apenas quando houver depoimentos autorizados */}
+      {depoimentosAutorizados.length > 0 && (
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-nude-dark">
+          <div className="max-w-7xl mx-auto flex flex-col gap-12">
+            <SectionTitle
+              title="O que dizem nossas pacientes"
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {depoimentosAutorizados.map(d => (
+                <TestimonialCard key={d.id} depoimento={d} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CTABanner
         title="Quer entender o que a estética avançada pode fazer por você?"

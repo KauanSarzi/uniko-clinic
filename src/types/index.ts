@@ -27,6 +27,7 @@ export interface Depoimento {
   foto?: string
   procedimento: string
   texto: string
+  autorizado?: boolean
 }
 
 export interface Diferencial {

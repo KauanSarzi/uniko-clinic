@@ -1,9 +1,14 @@
+'use client'
 import Script from 'next/script'
+import { useCookieConsent } from '@/hooks/useCookieConsent'
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID
 
 export default function MetaPixel() {
-  if (!PIXEL_ID) return null
+  const { consent, resolved } = useCookieConsent()
+
+  if (!PIXEL_ID || !resolved || consent !== 'accepted') return null
+
   return (
     <Script
       id="meta-pixel"

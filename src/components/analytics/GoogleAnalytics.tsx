@@ -1,9 +1,14 @@
+'use client'
 import Script from 'next/script'
+import { useCookieConsent } from '@/hooks/useCookieConsent'
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function GoogleAnalytics() {
-  if (!GA_ID) return null
+  const { consent, resolved } = useCookieConsent()
+
+  if (!GA_ID || !resolved || consent !== 'accepted') return null
+
   return (
     <>
       <Script

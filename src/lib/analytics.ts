@@ -1,3 +1,5 @@
+import { hasConsented } from './cookieConsent'
+
 declare global {
   interface Window {
     gtag?: (command: string, ...args: unknown[]) => void
@@ -11,6 +13,7 @@ export function trackEvent(
   params?: Record<string, unknown>
 ): void {
   if (typeof window === 'undefined') return
+  if (!hasConsented()) return
 
   // Google Analytics 4
   if (typeof window.gtag === 'function') {

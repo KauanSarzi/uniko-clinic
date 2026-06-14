@@ -42,7 +42,7 @@ export default function Footer() {
             {/* Identificação profissional */}
             <p className="font-sans text-nude/40 text-[10px] leading-relaxed">
               Responsável técnica: Andréia Sarzi<br />
-              Biomédica Esteta · {clinica.registroProfissional}
+              Biomédica Esteta
             </p>
           </div>
 

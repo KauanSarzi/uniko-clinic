@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { buildWhatsAppUrl } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade',
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function PoliticaDePrivacidadePage() {
+  const whatsAppUrl = buildWhatsAppUrl()
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
       <div className="flex flex-col gap-3 mb-12">
@@ -27,7 +29,10 @@ export default function PoliticaDePrivacidadePage() {
             A <strong className="text-vinho">Uniko Clinic by Andréia Sarzi</strong> é uma clínica de estética localizada em São Paulo — SP. Somos responsáveis pelo tratamento dos dados pessoais coletados por meio deste site e dos nossos canais de atendimento.
           </p>
           <p className="mt-2">
-            Para dúvidas sobre esta política ou sobre o tratamento dos seus dados, entre em contato pelo e-mail: <strong className="text-vinho">privacidade@unikoclinic.com.br</strong> {/* substitua pelo e-mail real */}
+            Para dúvidas sobre esta política ou sobre o tratamento dos seus dados,{' '}
+            <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer" className="text-vinho font-medium underline hover:text-gold transition-colors">
+              entre em contato pelo WhatsApp oficial da Uniko Clinic
+            </a>.
           </p>
         </section>
 
@@ -83,14 +88,34 @@ export default function PoliticaDePrivacidadePage() {
             <li>Solicitar a portabilidade dos dados.</li>
           </ul>
           <p className="mt-2">
-            Para exercer seus direitos, entre em contato: <strong className="text-vinho">privacidade@unikoclinic.com.br</strong>
+            Para exercer seus direitos,{' '}
+            <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer" className="text-vinho font-medium underline hover:text-gold transition-colors">
+              entre em contato pelo WhatsApp oficial da Uniko Clinic
+            </a>.
           </p>
         </section>
 
         <section>
           <h2 className="font-display text-vinho text-xl mb-3">7. Cookies e rastreamento</h2>
+          <p className="mb-3">
+            Utilizamos dois tipos de cookies:
+          </p>
+          <ul className="list-disc list-inside flex flex-col gap-1 mb-3">
+            <li>
+              <strong className="text-vinho">Cookies essenciais:</strong> necessários para o funcionamento básico do site (navegação, segurança). Não requerem consentimento e não coletam dados pessoais identificáveis.
+            </li>
+            <li>
+              <strong className="text-vinho">Cookies não essenciais:</strong> ferramentas de análise de tráfego e publicidade digital. Só são ativados com sua autorização explícita.
+            </li>
+          </ul>
+          <p className="mb-3">
+            Podemos utilizar ferramentas de análise e publicidade digital, quando configuradas e autorizadas, para compreender o uso do site e melhorar nossa comunicação. Essas ferramentas podem incluir Google Analytics, Google Tag Manager e Meta Pixel (Facebook/Instagram).
+          </p>
+          <p className="mb-3">
+            <strong className="text-vinho">Como gerenciar sua escolha:</strong> ao acessar o site pela primeira vez, você verá um aviso de cookies no rodapé da página. Você pode clicar em <em>Aceitar</em> para permitir cookies não essenciais, ou <em>Recusar</em> para bloqueá-los. Sua preferência é salva localmente no seu navegador (localStorage) com a chave <code className="text-xs bg-vinho/5 px-1 rounded">uniko_cookie_consent</code> e não replicamos essa informação para nossos servidores.
+          </p>
           <p>
-            Utilizamos cookies para melhorar a experiência de navegação, analisar o tráfego (Google Analytics) e mensurar campanhas (Meta Pixel). Você pode gerenciar suas preferências de cookies nas configurações do seu navegador.
+            Você também pode gerenciar ou limpar cookies a qualquer momento nas configurações do seu navegador. Ao limpar os dados do navegador, o aviso de cookies será exibido novamente na próxima visita.
           </p>
         </section>
 
@@ -104,8 +129,10 @@ export default function PoliticaDePrivacidadePage() {
         <section>
           <h2 className="font-display text-vinho text-xl mb-3">9. Contato — Encarregado de Dados (DPO)</h2>
           <p>
-            Para questões relacionadas a esta Política de Privacidade ou aos seus dados pessoais, entre em contato:<br />
-            <strong className="text-vinho">E-mail:</strong> privacidade@unikoclinic.com.br {/* substitua */}
+            Para questões relacionadas a esta Política de Privacidade ou aos seus dados pessoais,{' '}
+            <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer" className="text-vinho font-medium underline hover:text-gold transition-colors">
+              entre em contato pelo WhatsApp oficial da Uniko Clinic
+            </a>.
           </p>
         </section>
 

@@ -1,9 +1,14 @@
+'use client'
 import Script from 'next/script'
+import { useCookieConsent } from '@/hooks/useCookieConsent'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 
 export default function GoogleTagManager() {
-  if (!GTM_ID) return null
+  const { consent, resolved } = useCookieConsent()
+
+  if (!GTM_ID || !resolved || consent !== 'accepted') return null
+
   return (
     <>
       <Script
