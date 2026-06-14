@@ -44,9 +44,9 @@ export default function TratamentoCard({ tratamento }: TratamentoCardProps) {
         <p className="font-sans text-sm text-vinho/60 leading-relaxed line-clamp-2 flex-1">
           {tratamento.descricao}
         </p>
-        <span className="font-sans text-sm text-gold font-medium mt-2 group-hover:gap-2 flex items-center gap-1 transition-all">
-          Saiba mais
-          <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <span className="font-sans text-sm text-gold font-medium mt-2 flex items-center gap-1 min-w-0">
+          <span className="truncate">Saiba mais sobre {tratamento.nome}</span>
+          <svg className="w-3.5 h-3.5 shrink-0 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </span>

@@ -67,26 +67,40 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'HealthAndBeautyBusiness',
-  name: clinica.nomeCompleto,
-  url: clinica.siteUrl,
-  telephone: `+${clinica.whatsapp}`,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Rua Boa Esperança, 229',
-    addressLocality: 'São Paulo',
-    addressRegion: 'SP',
-    addressCountry: 'BR',
-  },
-  openingHoursSpecification: [
+  '@graph': [
     {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '10:00',
-      closes: '20:00',
+      '@type': 'HealthAndBeautyBusiness',
+      name: clinica.nomeCompleto,
+      url: clinica.siteUrl,
+      telephone: `+${clinica.whatsapp}`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Rua Boa Esperança, 229',
+        addressLocality: 'São Paulo',
+        addressRegion: 'SP',
+        addressCountry: 'BR',
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '10:00',
+          closes: '20:00',
+        },
+      ],
+      sameAs: [clinica.instagram],
+    },
+    {
+      '@type': 'Person',
+      name: 'Andréia Sarzi',
+      jobTitle: 'Biomédica Esteta',
+      worksFor: {
+        '@type': 'HealthAndBeautyBusiness',
+        name: clinica.nomeCompleto,
+      },
+      sameAs: [clinica.instagram],
     },
   ],
-  sameAs: [clinica.instagram],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

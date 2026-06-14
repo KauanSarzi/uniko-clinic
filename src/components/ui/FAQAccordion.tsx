@@ -43,13 +43,12 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               </span>
             </button>
 
-            {isOpen && (
-              <div className="pb-5 pr-10">
-                <p className="font-sans text-sm text-vinho/65 leading-relaxed">
-                  {item.resposta}
-                </p>
-              </div>
-            )}
+            {/* Resposta sempre no DOM para rastreabilidade — visualmente oculta quando fechada */}
+            <div className={isOpen ? 'pb-5 pr-10' : 'hidden'}>
+              <p className="font-sans text-sm text-vinho/65 leading-relaxed">
+                {item.resposta}
+              </p>
+            </div>
           </div>
         )
       })}

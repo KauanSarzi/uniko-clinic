@@ -58,6 +58,9 @@ export default function AgendamentoPage() {
                 </svg>
                 Iniciar conversa no WhatsApp
               </a>
+              <p className="font-sans text-sm text-nude/55 text-center">
+                WhatsApp: <span className="text-nude/80">(11) 97800-8688</span>
+              </p>
             </div>
 
             {/* Horários */}
@@ -109,6 +112,21 @@ export default function AgendamentoPage() {
           </div>
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqAgendamento.map(item => ({
+              '@type': 'Question',
+              name: item.pergunta,
+              acceptedAnswer: { '@type': 'Answer', text: item.resposta },
+            })),
+          }),
+        }}
+      />
     </>
   )
 }

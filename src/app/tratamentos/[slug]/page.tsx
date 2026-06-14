@@ -6,6 +6,7 @@ import SectionTitle from '@/components/ui/SectionTitle'
 import TratamentoViewTracker from '@/components/analytics/TratamentoViewTracker'
 import { getTratamentoBySlug, tratamentos } from '@/data/tratamentos'
 import { buildWhatsAppUrl } from '@/lib/whatsapp'
+import { clinica } from '@/lib/config'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!tratamento) return {}
   return {
     title: tratamento.nome,
-    description: `${tratamento.descricao} Realizado na Uniko Clinic, em São Paulo. Agende sua avaliação gratuita.`,
+    description: `${tratamento.descricao.slice(0, 110)}. Uniko Clinic, São Paulo. Avaliação gratuita.`,
     alternates: {
       canonical: `/tratamentos/${slug}`,
     },
@@ -189,6 +190,44 @@ export default async function TratamentoPage({ params }: PageProps) {
         subtitle="Agende uma avaliação gratuita e receba uma orientação individual para o seu caso."
         ctaLabel="Agendar avaliação gratuita pelo WhatsApp"
         tratamento={tratamento.nome}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              ...(tratamento.faq.length > 0 ? [{
+                '@type': 'FAQPage',
+                mainEntity: tratamento.faq.map(item => ({
+                  '@type': 'Question',
+                  name: item.pergunta,
+                  acceptedAnswer: { '@type': 'Answer', text: item.resposta },
+                })),
+              }] : []),
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Início', item: clinica.siteUrl },
+                  { '@type': 'ListItem', position: 2, name: 'Tratamentos', item: `${clinica.siteUrl}/tratamentos` },
+                  { '@type': 'ListItem', position: 3, name: tratamento.nome, item: `${clinica.siteUrl}/tratamentos/${slug}` },
+                ],
+              },
+              {
+                '@type': 'Service',
+                name: tratamento.nome,
+                description: tratamento.descricao,
+                provider: {
+                  '@type': 'HealthAndBeautyBusiness',
+                  name: clinica.nomeCompleto,
+                },
+                areaServed: { '@type': 'City', name: 'São Paulo' },
+                serviceType: 'Estética avançada',
+              },
+            ],
+          }),
+        }}
       />
     </>
   )

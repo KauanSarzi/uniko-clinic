@@ -6,7 +6,7 @@ import TratamentosGrid from './_components/TratamentosGrid'
 export const metadata: Metadata = {
   title: 'Tratamentos',
   description:
-    'Conheça todos os tratamentos da Uniko Clinic: harmonização facial, toxina botulínica, preenchimento, bioestimuladores, laser e mais. Protocolos exclusivos em São Paulo.',
+    'Harmonização facial, toxina botulínica, preenchimento e bioestimuladores em São Paulo. Protocolos exclusivos da Uniko Clinic. Avaliação gratuita.',
   alternates: { canonical: '/tratamentos' },
 }
 

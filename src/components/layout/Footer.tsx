@@ -86,6 +86,17 @@ export default function Footer() {
                   <span key={h.dia} className="block">{h.dia}: {h.horario}</span>
                 ))}
               </p>
+              <p>
+                <span className="block text-nude/40 text-xs uppercase tracking-wider mb-0.5">WhatsApp</span>
+                <a
+                  href={`https://wa.me/${clinica.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold transition-colors"
+                >
+                  (11) 97800-8688
+                </a>
+              </p>
               <a
                 href="/agendamento"
                 className="mt-2 inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-medium"

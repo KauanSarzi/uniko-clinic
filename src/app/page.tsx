@@ -16,7 +16,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Uniko Clinic | Rejuvenescimento natural em São Paulo',
   description:
-    'Clínica de estética avançada em São Paulo. Avaliação gratuita com a biomédica Andréia Sarzi. Harmonização facial, bioestimuladores, laser e muito mais — com planejamento individual e resultado natural.',
+    'Clínica de estética avançada em São Paulo. Avaliação gratuita com a biomédica Andréia Sarzi. Harmonização facial, bioestimuladores, laser e muito mais.',
   alternates: { canonical: '/' },
 }
 
@@ -278,6 +278,24 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'Como funciona a avaliação gratuita na Uniko Clinic',
+            description: 'Processo de avaliação personalizada para indicação de tratamentos estéticos em São Paulo.',
+            step: passosDaAvaliacao.map((passo, i) => ({
+              '@type': 'HowToStep',
+              position: i + 1,
+              name: passo.titulo,
+              text: passo.texto,
+            })),
+          }),
+        }}
+      />
     </>
   )
 }
