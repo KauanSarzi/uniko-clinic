@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* Hero */}
       <HeroSection
         title="Rejuvenescimento natural com tecnologia e planejamento individual"
-        subtitle="Na Uniko Clinic by Andréia Sarzi, cada tratamento é planejado de forma individual para valorizar sua beleza com equilíbrio, segurança e naturalidade."
+        subtitle="Na Uniko Clinic, cada tratamento é planejado de forma individual para valorizar sua beleza com equilíbrio, segurança e naturalidade."
         ctaLabel="Agendar avaliação gratuita pelo WhatsApp"
         ctaWhatsApp
         size="full"
