@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     'Galeria de resultados da Uniko Clinic. Veja fotos de antes e depois dos tratamentos realizados pela biomédica Andréia Sarzi.',
   alternates: { canonical: '/resultados' },
   openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    siteName: 'Uniko Clinic',
     title: 'Resultados | Uniko Clinic',
     description:
       'Galeria de resultados da Uniko Clinic. Tratamentos realizados pela biomédica Andréia Sarzi em São Paulo, com foco em naturalidade e segurança.',

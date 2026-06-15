@@ -49,6 +49,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `/tratamentos/${slug}`,
     },
     openGraph: {
+      type: 'website',
+      locale: 'pt_BR',
+      siteName: 'Uniko Clinic',
       title: `${tratamento.nome} | Uniko Clinic`,
       description,
       url: `/tratamentos/${slug}`,

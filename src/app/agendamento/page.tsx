@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     'Agende sua avaliação na Uniko Clinic. Atendimento em São Paulo. Entre em contato pelo WhatsApp ou formulário.',
   alternates: { canonical: '/agendamento' },
   openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    siteName: 'Uniko Clinic',
     title: 'Agendamento | Uniko Clinic',
     description:
       'Agende sua avaliação gratuita na Uniko Clinic em São Paulo. Fale pelo WhatsApp ou preencha o formulário — respondemos em breve.',

@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     'Clínica de estética avançada em São Paulo. Avaliação gratuita com a biomédica Andréia Sarzi. Harmonização facial, bioestimuladores, laser e muito mais.',
   alternates: { canonical: '/' },
   openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    siteName: 'Uniko Clinic',
     title: 'Uniko Clinic | Rejuvenescimento natural em São Paulo',
     description:
       'Clínica de estética avançada em São Paulo. Avaliação gratuita com a biomédica Andréia Sarzi. Harmonização facial, bioestimuladores, laser e muito mais.',
