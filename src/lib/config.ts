@@ -2,7 +2,7 @@ export const clinica = {
   nome: 'Uniko Clinic',
   nomeCompleto: 'Uniko Clinic by Andréia Sarzi',
   // URL temporária de homologação no Amplify. Substituir pelo domínio real antes do lançamento oficial.
-  siteUrl: 'https://main.d3hfxutjjab43u.amplifyapp.com',
+  siteUrl: 'https://main.d2qp1m0rdf1xot.amplifyapp.com',
   whatsapp: '5511978008688',
   endereco: 'Rua Boa Esperança, 229 - Chácara Santo Antônio, São Paulo - SP',
   horarios: [
