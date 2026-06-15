@@ -8,6 +8,17 @@ export const metadata: Metadata = {
   description:
     'Harmonização facial, toxina botulínica, preenchimento e bioestimuladores em São Paulo. Protocolos exclusivos da Uniko Clinic. Avaliação gratuita.',
   alternates: { canonical: '/tratamentos' },
+  openGraph: {
+    title: 'Tratamentos | Uniko Clinic',
+    description:
+      'Harmonização facial, toxina botulínica, preenchimento e bioestimuladores em São Paulo. Protocolos exclusivos da Uniko Clinic. Avaliação gratuita.',
+    url: '/tratamentos',
+  },
+  twitter: {
+    title: 'Tratamentos | Uniko Clinic',
+    description:
+      'Harmonização facial, toxina botulínica, preenchimento e bioestimuladores em São Paulo. Protocolos exclusivos da Uniko Clinic. Avaliação gratuita.',
+  },
 }
 
 export default function TratamentosPage() {

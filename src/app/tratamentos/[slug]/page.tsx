@@ -12,6 +12,25 @@ interface PageProps {
   params: Promise<{ slug: string }>
 }
 
+const metaDescriptions: Record<string, string> = {
+  'harmonizacao-facial':
+    'Planejamento facial personalizado para equilibrar proporções, suavizar sinais do tempo e preservar sua identidade. Avaliação gratuita em São Paulo.',
+  'toxina-botulinica':
+    'Toxina botulínica para suavizar linhas da testa, glabela e pés de galinha com naturalidade. Avaliação gratuita na Uniko Clinic.',
+  'preenchimento-facial-labial':
+    'Preenchimento facial e labial para proporção, contorno e reposição de volume com naturalidade. Avaliação gratuita em São Paulo.',
+  'bioestimuladores-colageno':
+    'Bioestimuladores de colágeno para flacidez, firmeza e qualidade da pele com resultado progressivo. Avaliação gratuita em São Paulo.',
+  'laser-e-tecnologias':
+    'Lasers e tecnologias para manchas, textura, poros e qualidade da pele, com avaliação individual do fototipo. Uniko Clinic em São Paulo.',
+  'depilacao-a-laser':
+    'Depilação a laser para redução progressiva dos pelos, foliculite e praticidade na rotina. Avaliação gratuita na Uniko Clinic.',
+  'tratamentos-corporais':
+    'Tratamentos corporais para flacidez, gordura localizada e contorno, com protocolo individualizado. Avaliação gratuita em São Paulo.',
+  'tratamentos-para-pele':
+    'Tratamentos para pele com foco em acne, manchas, textura, poros e hidratação, conforme avaliação individual. Uniko Clinic em São Paulo.',
+}
+
 export async function generateStaticParams() {
   return tratamentos.map(t => ({ slug: t.slug }))
 }
@@ -20,11 +39,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const tratamento = getTratamentoBySlug(slug)
   if (!tratamento) return {}
+  const description =
+    metaDescriptions[slug] ??
+    `${tratamento.descricao.slice(0, 110)}. Uniko Clinic, São Paulo. Avaliação gratuita.`
   return {
     title: tratamento.nome,
-    description: `${tratamento.descricao.slice(0, 110)}. Uniko Clinic, São Paulo. Avaliação gratuita.`,
+    description,
     alternates: {
       canonical: `/tratamentos/${slug}`,
+    },
+    openGraph: {
+      title: `${tratamento.nome} | Uniko Clinic`,
+      description,
+      url: `/tratamentos/${slug}`,
+    },
+    twitter: {
+      title: `${tratamento.nome} | Uniko Clinic`,
+      description,
     },
   }
 }

@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   description:
     'Agende sua avaliação na Uniko Clinic. Atendimento em São Paulo. Entre em contato pelo WhatsApp ou formulário.',
   alternates: { canonical: '/agendamento' },
+  openGraph: {
+    title: 'Agendamento | Uniko Clinic',
+    description:
+      'Agende sua avaliação gratuita na Uniko Clinic em São Paulo. Fale pelo WhatsApp ou preencha o formulário — respondemos em breve.',
+    url: '/agendamento',
+  },
+  twitter: {
+    title: 'Agendamento | Uniko Clinic',
+    description:
+      'Agende sua avaliação gratuita na Uniko Clinic em São Paulo. Fale pelo WhatsApp ou preencha o formulário — respondemos em breve.',
+  },
 }
 
 export default function AgendamentoPage() {
@@ -59,7 +70,10 @@ export default function AgendamentoPage() {
                 Iniciar conversa no WhatsApp
               </a>
               <p className="font-sans text-sm text-nude/55 text-center">
-                WhatsApp: <span className="text-nude/80">(11) 97800-8688</span>
+                WhatsApp:{' '}
+                <a href="tel:+5511978008688" className="text-nude/80 hover:text-nude transition-colors">
+                  (11) 97800-8688
+                </a>
               </p>
             </div>
 

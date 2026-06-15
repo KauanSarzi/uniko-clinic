@@ -9,6 +9,17 @@ export const metadata: Metadata = {
   description:
     'Conheça a Uniko Clinic by Andréia Sarzi, biomédica especializada em estética avançada em São Paulo. Nossa filosofia: estética que começa por dentro.',
   alternates: { canonical: '/sobre' },
+  openGraph: {
+    title: 'Sobre a Uniko Clinic | Andréia Sarzi',
+    description:
+      'Conheça a Uniko Clinic by Andréia Sarzi, biomédica especializada em estética avançada em São Paulo. Nossa filosofia: estética que começa por dentro.',
+    url: '/sobre',
+  },
+  twitter: {
+    title: 'Sobre a Uniko Clinic | Andréia Sarzi',
+    description:
+      'Conheça a Uniko Clinic by Andréia Sarzi, biomédica especializada em estética avançada em São Paulo. Nossa filosofia: estética que começa por dentro.',
+  },
 }
 
 export default function SobrePage() {

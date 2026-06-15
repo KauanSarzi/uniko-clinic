@@ -89,9 +89,7 @@ export default function Footer() {
               <p>
                 <span className="block text-nude/40 text-xs uppercase tracking-wider mb-0.5">WhatsApp</span>
                 <a
-                  href={`https://wa.me/${clinica.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+5511978008688"
                   className="hover:text-gold transition-colors"
                 >
                   (11) 97800-8688
