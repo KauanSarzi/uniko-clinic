@@ -3,6 +3,7 @@ import CTABanner from '@/components/sections/CTABanner'
 import SectionTitle from '@/components/ui/SectionTitle'
 import DiferencialCard from '@/components/cards/DiferencialCard'
 import { diferenciais } from '@/data/diferenciais'
+import { clinica } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'Sobre',
@@ -47,7 +48,7 @@ export default function SobrePage() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-vinho/80 backdrop-blur-sm p-5">
               <p className="font-sans text-nude/90 text-sm font-semibold">Andréia Sarzi</p>
-              <p className="font-sans text-gold text-xs">Biomédica Esteta</p>
+              <p className="font-sans text-gold text-xs">Biomédica Esteta · {clinica.registroProfissional}</p>
             </div>
           </div>
 

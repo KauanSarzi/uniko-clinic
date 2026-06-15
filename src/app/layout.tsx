@@ -69,7 +69,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'HealthAndBeautyBusiness',
+      '@type': ['HealthAndBeautyBusiness', 'Organization'],
+      '@id': `${clinica.siteUrl}/#organization`,
       name: clinica.nomeCompleto,
       url: clinica.siteUrl,
       telephone: `+${clinica.whatsapp}`,
@@ -94,10 +95,12 @@ const jsonLd = {
       '@type': 'Person',
       name: 'Andréia Sarzi',
       jobTitle: 'Biomédica Esteta',
-      worksFor: {
-        '@type': 'HealthAndBeautyBusiness',
-        name: clinica.nomeCompleto,
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'CRBM',
+        value: '40185',
       },
+      worksFor: { '@id': `${clinica.siteUrl}/#organization` },
       sameAs: [clinica.instagram],
     },
   ],
