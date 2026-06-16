@@ -9,7 +9,7 @@ export default function TratamentoCard({ tratamento }: TratamentoCardProps) {
   return (
     <Link
       href={`/tratamentos/${tratamento.slug}`}
-      className="group flex flex-col rounded-card overflow-hidden bg-white shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+      className="group flex flex-col rounded-card overflow-hidden bg-nude shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
       aria-label={`Ver tratamento: ${tratamento.nome}`}
     >
       {/* Imagem */}

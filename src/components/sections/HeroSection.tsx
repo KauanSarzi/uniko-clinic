@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { buildWhatsAppUrl } from '@/lib/whatsapp'
 import { trackEvent } from '@/lib/analytics'
+import SignatureArc from '@/components/ui/SignatureArc'
 
 interface HeroSectionProps {
   title: string
@@ -13,6 +14,7 @@ interface HeroSectionProps {
   tratamento?: string
   size?: 'full' | 'medium' | 'small'
   backgroundImage?: string
+  showArc?: boolean
 }
 
 export default function HeroSection({
@@ -24,6 +26,7 @@ export default function HeroSection({
   tratamento,
   size = 'full',
   backgroundImage,
+  showArc = false,
 }: HeroSectionProps) {
   const heightClass = {
     full: 'min-h-[100dvh]',
@@ -112,11 +115,16 @@ export default function HeroSection({
 
       {/* Scroll indicator — apenas no hero full */}
       {size === 'full' && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
-          <svg className="w-6 h-6 text-nude/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-50" aria-hidden="true">
+          <svg className="w-6 h-6 text-nude/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
+      )}
+
+      {/* Arco decorativo — apenas quando solicitado */}
+      {showArc && (
+        <SignatureArc className="absolute right-0 bottom-0 translate-x-1/4 translate-y-1/4 w-56 md:w-80 opacity-10 pointer-events-none" />
       )}
     </section>
   )

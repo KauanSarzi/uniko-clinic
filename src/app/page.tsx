@@ -6,6 +6,7 @@ import MapEmbed from '@/components/sections/MapEmbed'
 import TratamentoCard from '@/components/cards/TratamentoCard'
 import TestimonialCard from '@/components/cards/TestimonialCard'
 import DiferencialCard from '@/components/cards/DiferencialCard'
+import SignatureArc from '@/components/ui/SignatureArc'
 import { getTratamentosDestaque } from '@/data/tratamentos'
 import { depoimentos } from '@/data/depoimentos'
 import { diferenciais } from '@/data/diferenciais'
@@ -77,6 +78,7 @@ export default function HomePage() {
         ctaLabel="Agendar avaliação gratuita pelo WhatsApp"
         ctaWhatsApp
         size="full"
+        showArc
       />
 
       {/* Posicionamento */}
@@ -92,7 +94,8 @@ export default function HomePage() {
       </section>
 
       {/* Como funciona sua avaliação */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-vinho">
+      <section className="relative overflow-hidden py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-vinho">
+        <SignatureArc className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/3 w-48 md:w-64 opacity-[0.07] pointer-events-none" />
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
           <SectionTitle
             title="Como funciona sua avaliação"
