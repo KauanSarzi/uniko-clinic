@@ -109,10 +109,10 @@ const jsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${cormorant.variable} ${jost.variable}`}>
-      <body className="bg-nude text-vinho min-h-[100dvh] flex flex-col font-sans antialiased">
+      <body className="bg-nude text-vinho min-h-screen flex flex-col font-sans antialiased">
         <GoogleTagManager />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
         <WhatsAppButton />
         <CookieBanner />

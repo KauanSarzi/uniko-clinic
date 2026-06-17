@@ -60,7 +60,7 @@ export default function ResultadosPage() {
             title="Antes & Depois"
             subtitle="Resultados naturais e harmoniosos — porque cada beleza é única."
           />
-          <div className="w-full rounded-card border border-vinho/10 bg-nude-dark p-10 flex flex-col items-center gap-4">
+          <div className="w-full min-h-[40vh] rounded-card border border-vinho/10 bg-nude-dark p-10 flex flex-col items-center justify-center gap-4">
             <div className="h-px w-12 bg-gold-gradient" aria-hidden="true" />
             <p className="font-sans text-vinho/70 text-base leading-relaxed">
               Os resultados autorizados serão publicados em breve.<br />

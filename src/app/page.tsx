@@ -223,13 +223,13 @@ export default function HomePage() {
             <h2 className="font-display text-vinho text-display-md md:text-display-lg leading-[1.15]">
               Uma abordagem que<br />começa pela escuta
             </h2>
-            <p className="font-sans text-vinho/65 text-base leading-relaxed">
+            <p className="font-sans text-vinho/75 text-base leading-relaxed">
               Andréia Sarzi é biomédica esteta, com atuação em estética avançada. Sua abordagem parte de um princípio simples: cada rosto é único, e cada tratamento precisa respeitar isso.
             </p>
-            <p className="font-sans text-vinho/65 text-base leading-relaxed">
+            <p className="font-sans text-vinho/75 text-base leading-relaxed">
               Na Uniko Clinic, você não recebe um protocolo padrão. Recebe uma avaliação individual, uma escuta atenta e uma indicação fundamentada — pensada para o seu rosto, sua pele e o resultado que você quer alcançar com segurança.
             </p>
-            <p className="font-sans text-vinho/65 text-base leading-relaxed">
+            <p className="font-sans text-vinho/75 text-base leading-relaxed">
               Para Andréia, cuidar da aparência é também cuidar da autoestima. Por isso, cada atendimento combina técnica, tecnologia e um olhar humanizado que vai além do procedimento.
             </p>
             <Link

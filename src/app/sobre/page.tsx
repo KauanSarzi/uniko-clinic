@@ -62,10 +62,10 @@ export default function SobrePage() {
               <h2 className="font-display text-vinho text-display-md leading-[1.15]">
                 Nossa história
               </h2>
-              <p className="font-sans text-vinho/65 text-base leading-relaxed">
+              <p className="font-sans text-vinho/75 text-base leading-relaxed">
                 A Uniko Clinic nasceu do sonho da biomédica Andréia Sarzi de criar um espaço onde cada paciente se sentisse verdadeiramente ouvida e cuidada. Em São Paulo, a clínica se tornou referência em estética personalizada, com protocolos desenvolvidos exclusivamente para cada pessoa.
               </p>
-              <p className="font-sans text-vinho/65 text-base leading-relaxed">
+              <p className="font-sans text-vinho/75 text-base leading-relaxed">
                 A filosofia da Uniko vai além da estética superficial: acreditamos que cuidar de si mesma é um ato de amor-próprio que transforma não só a aparência, mas também a autoestima e o bem-estar emocional.
               </p>
             </div>
@@ -74,10 +74,10 @@ export default function SobrePage() {
               <h2 className="font-display text-vinho text-display-md leading-[1.15]">
                 Andréia Sarzi, biomédica
               </h2>
-              <p className="font-sans text-vinho/65 text-base leading-relaxed">
+              <p className="font-sans text-vinho/75 text-base leading-relaxed">
                 Andréia Sarzi é biomédica esteta, com atuação em estética avançada. Une conhecimento técnico-científico com um olhar apurado para a beleza natural. Cada procedimento é realizado com precisão e sensibilidade, sempre respeitando as características únicas de cada paciente.
               </p>
-              <p className="font-sans text-vinho/65 text-base leading-relaxed">
+              <p className="font-sans text-vinho/75 text-base leading-relaxed">
                 Sua abordagem humanizada transforma cada consulta em uma experiência acolhedora, onde o objetivo é sempre realçar a sua beleza natural — nunca modificar quem você é.
               </p>
             </div>

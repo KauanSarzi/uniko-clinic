@@ -56,14 +56,14 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-sans text-sm text-nude/70 hover:text-gold transition-colors w-fit"
+                  className="font-sans text-sm text-nude/70 hover:text-gold transition-colors block py-1"
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
                 href="/politica-de-privacidade"
-                className="font-sans text-sm text-nude/70 hover:text-gold transition-colors w-fit"
+                className="font-sans text-sm text-nude/70 hover:text-gold transition-colors block py-1"
               >
                 Política de Privacidade
               </Link>

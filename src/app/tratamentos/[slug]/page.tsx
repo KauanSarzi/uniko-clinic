@@ -102,7 +102,7 @@ export default async function TratamentoPage({ params }: PageProps) {
           <h2 id="oque-e" className="font-display text-vinho text-display-md mb-4">
             O que é {tratamento.nome}?
           </h2>
-          <p className="font-sans text-vinho/65 leading-relaxed">{tratamento.descricaoLonga}</p>
+          <p className="font-sans text-vinho/75 leading-relaxed">{tratamento.descricaoLonga}</p>
         </section>
 
         {/* Quando esse tratamento faz sentido */}
@@ -120,7 +120,7 @@ export default async function TratamentoPage({ params }: PageProps) {
                   >
                     —
                   </span>
-                  <span className="font-sans text-sm text-vinho/65">{item}</span>
+                  <span className="font-sans text-sm text-vinho/70">{item}</span>
                 </li>
               ))}
             </ul>
@@ -140,7 +140,7 @@ export default async function TratamentoPage({ params }: PageProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </span>
-                <span className="font-sans text-sm text-vinho/65">{item}</span>
+                <span className="font-sans text-sm text-vinho/70">{item}</span>
               </li>
             ))}
           </ul>
@@ -151,7 +151,7 @@ export default async function TratamentoPage({ params }: PageProps) {
           <h2 id="como-funciona" className="font-display text-vinho text-display-md mb-4">
             Como funciona
           </h2>
-          <p className="font-sans text-vinho/65 leading-relaxed">{tratamento.comoFunciona}</p>
+          <p className="font-sans text-vinho/75 leading-relaxed">{tratamento.comoFunciona}</p>
         </section>
 
         {/* O que esse tratamento não faz */}
@@ -170,7 +170,7 @@ export default async function TratamentoPage({ params }: PageProps) {
                     >
                       ○
                     </span>
-                    <span className="font-sans text-sm text-vinho/65">{item}</span>
+                    <span className="font-sans text-sm text-vinho/70">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -205,7 +205,7 @@ export default async function TratamentoPage({ params }: PageProps) {
           <h2 id="duracao" className="font-display text-vinho text-display-md mb-4">
             Duração, cuidados e expectativa
           </h2>
-          <p className="font-sans text-vinho/65 leading-relaxed">{tratamento.duracaoECuidados}</p>
+          <p className="font-sans text-vinho/75 leading-relaxed">{tratamento.duracaoECuidados}</p>
         </section>
 
         {/* FAQ */}

@@ -21,13 +21,13 @@ export default function CookieBanner() {
         <div className="flex flex-wrap items-center gap-3 shrink-0">
           <button
             onClick={accept}
-            className="px-5 py-2 rounded-pill bg-gold text-vinho font-sans text-sm font-medium hover:bg-gold-light transition-colors"
+            className="px-5 py-3 rounded-pill bg-gold text-vinho font-sans text-sm font-medium hover:bg-gold-light transition-colors"
           >
             Aceitar
           </button>
           <button
             onClick={reject}
-            className="px-5 py-2 rounded-pill border border-nude/30 text-nude font-sans text-sm hover:border-nude/60 transition-colors"
+            className="px-5 py-3 rounded-pill border border-nude/30 text-nude font-sans text-sm hover:border-nude/60 transition-colors"
           >
             Recusar
           </button>

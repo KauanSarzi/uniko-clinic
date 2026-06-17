@@ -51,6 +51,7 @@ export default function ContatoForm() {
 
   const inputClass =
     'w-full font-sans text-base text-vinho bg-white border border-vinho/15 rounded-card px-4 py-3 outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 placeholder:text-vinho/30 transition-colors disabled:opacity-50'
+  const selectClass = `${inputClass} appearance-none pr-10`
   const labelClass = 'font-sans text-xs font-medium text-vinho/60 uppercase tracking-wider mb-1.5 block'
   const isSending = status === 'sending'
 
@@ -109,36 +110,50 @@ export default function ContatoForm() {
         {/* Tratamento */}
         <div>
           <label htmlFor="tratamento" className={labelClass}>Tratamento de interesse</label>
-          <select
-            id="tratamento"
-            name="tratamento"
-            value={form.tratamento}
-            onChange={handleChange}
-            disabled={isSending}
-            className={inputClass}
-          >
-            <option value="">Selecione um tratamento</option>
-            {tratamentos.map(t => (
-              <option key={t.slug} value={t.nome}>{t.nome}</option>
-            ))}
-            <option value="Não sei ainda">Não sei ainda — quero uma avaliação</option>
-          </select>
+          <div className="relative">
+            <select
+              id="tratamento"
+              name="tratamento"
+              value={form.tratamento}
+              onChange={handleChange}
+              disabled={isSending}
+              className={selectClass}
+            >
+              <option value="">Selecione um tratamento</option>
+              {tratamentos.map(t => (
+                <option key={t.slug} value={t.nome}>{t.nome}</option>
+              ))}
+              <option value="Não sei ainda">Não sei ainda — quero uma avaliação</option>
+            </select>
+            <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-vinho/40" aria-hidden="true">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </div>
         </div>
         {/* Turno */}
         <div>
           <label htmlFor="turno" className={labelClass}>Turno preferido</label>
-          <select
-            id="turno"
-            name="turno"
-            value={form.turno}
-            onChange={handleChange}
-            disabled={isSending}
-            className={inputClass}
-          >
-            <option value="">Sem preferência</option>
-            <option value="manhã">Manhã</option>
-            <option value="tarde">Tarde</option>
-          </select>
+          <div className="relative">
+            <select
+              id="turno"
+              name="turno"
+              value={form.turno}
+              onChange={handleChange}
+              disabled={isSending}
+              className={selectClass}
+            >
+              <option value="">Sem preferência</option>
+              <option value="manhã">Manhã</option>
+              <option value="tarde">Tarde</option>
+            </select>
+            <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-vinho/40" aria-hidden="true">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
 

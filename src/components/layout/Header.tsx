@@ -64,7 +64,7 @@ export default function Header() {
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2 text-vinho rounded-lg hover:bg-vinho/5 transition-colors"
+              className="md:hidden p-2 min-w-11 min-h-11 flex items-center justify-center text-vinho rounded-lg hover:bg-vinho/5 transition-colors"
               aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={menuOpen}
             >
