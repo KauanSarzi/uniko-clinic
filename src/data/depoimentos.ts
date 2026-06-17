@@ -35,6 +35,6 @@ export const depoimentos: Depoimento[] = [
     id: '6',
     nome: 'Patrícia O.',
     procedimento: 'Tratamentos para Pele',
-    texto: 'Lutei anos com o melasma e na Uniko Clinic finalmente encontrei um protocolo que funcionou para mim. O cuidado e a atenção da Dra. Andréia fazem toda a diferença.',
+    texto: 'Lutei anos com o melasma e na Uniko Clinic finalmente encontrei um protocolo que funcionou para mim. O cuidado e a atenção de Andréia Sarzi fazem toda a diferença.',
   },
 ]

@@ -8,22 +8,33 @@ import { trackEvent } from '@/lib/analytics'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export default function ContatoForm() {
   const [form, setForm] = useState({
     nome: '',
     telefone: '',
+    email: '',
     tratamento: '',
     turno: '',
     mensagem: '',
   })
   const [status, setStatus] = useState<Status>('idle')
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string }>({})
 
   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    if (e.target.name === 'email') setFieldErrors(prev => ({ ...prev, email: undefined }))
   }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
+
+    if (!EMAIL_REGEX.test(form.email.trim())) {
+      setFieldErrors({ email: 'Informe um e-mail válido.' })
+      return
+    }
+    setFieldErrors({})
     setStatus('sending')
 
     try {
@@ -65,7 +76,7 @@ export default function ContatoForm() {
         </div>
         <p className="font-display text-vinho text-xl">Solicitação enviada!</p>
         <p className="font-sans text-sm text-vinho/65 leading-relaxed">
-          Nossa equipe entrará em contato pelo telefone informado.
+          Nossa equipe entrará em contato pelo telefone ou e-mail informado.
         </p>
       </div>
     )
@@ -104,6 +115,25 @@ export default function ContatoForm() {
             className={inputClass}
           />
         </div>
+      </div>
+
+      {/* E-mail */}
+      <div>
+        <label htmlFor="email" className={labelClass}>E-mail *</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="seuemail@exemplo.com"
+          value={form.email}
+          onChange={handleChange}
+          disabled={isSending}
+          className={inputClass}
+        />
+        {fieldErrors.email && (
+          <p className="font-sans text-xs text-red-600 mt-1.5">{fieldErrors.email}</p>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
