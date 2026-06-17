@@ -50,7 +50,7 @@ export default function ContatoForm() {
   }
 
   const inputClass =
-    'w-full font-sans text-sm text-vinho bg-white border border-vinho/15 rounded-card px-4 py-3 outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 placeholder:text-vinho/30 transition-colors disabled:opacity-50'
+    'w-full font-sans text-base text-vinho bg-white border border-vinho/15 rounded-card px-4 py-3 outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 placeholder:text-vinho/30 transition-colors disabled:opacity-50'
   const labelClass = 'font-sans text-xs font-medium text-vinho/60 uppercase tracking-wider mb-1.5 block'
   const isSending = status === 'sending'
 

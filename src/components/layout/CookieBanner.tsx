@@ -12,7 +12,7 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-label="Preferências de cookies"
-      className="fixed bottom-0 left-0 right-0 z-40 bg-vinho border-t border-nude/10 shadow-card-hover"
+      className="fixed bottom-0 left-0 right-0 z-40 bg-vinho border-t border-nude/10 shadow-card-hover pb-[env(safe-area-inset-bottom)]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="flex-1 font-sans text-sm text-nude/80 leading-relaxed pr-20 sm:pr-0">

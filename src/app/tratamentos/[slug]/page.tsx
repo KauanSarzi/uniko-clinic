@@ -88,7 +88,7 @@ export default async function TratamentoPage({ params }: PageProps) {
             href={whatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-2 px-8 py-4 rounded-pill bg-gold-gradient font-sans text-vinho font-semibold hover:shadow-glow hover:scale-105 transition-all duration-200"
+            className="mt-2 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-pill bg-gold-gradient font-sans text-vinho font-semibold hover:shadow-glow hover:scale-105 transition-all duration-200"
           >
             Agendar avaliação gratuita pelo WhatsApp
           </a>

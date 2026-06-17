@@ -4,9 +4,12 @@ import { usePathname } from 'next/navigation'
 import { buildWhatsAppUrlForPage } from '@/lib/whatsapp'
 import { getTratamentoBySlug } from '@/data/tratamentos'
 import { trackEvent } from '@/lib/analytics'
+import { useCookieConsent } from '@/hooks/useCookieConsent'
 
 export default function WhatsAppButton() {
   const pathname = usePathname()
+  const { consent, resolved } = useCookieConsent()
+  const bannerVisible = resolved && consent === null
 
   let nomeTratamento: string | undefined
   if (pathname.startsWith('/tratamentos/')) {
@@ -16,13 +19,20 @@ export default function WhatsAppButton() {
 
   const url = buildWhatsAppUrlForPage(pathname, nomeTratamento)
 
+  // Quando o CookieBanner está visível, move o botão para cima para evitar sobreposição.
+  // Em mobile (< sm) o banner usa flex-col (~12rem de altura); em sm+ usa flex-row (~5.5rem).
+  // Em ambos os casos inclui safe-area-inset-bottom para iPhones com home indicator.
+  const bottomClass = bannerVisible
+    ? 'bottom-[calc(12rem+env(safe-area-inset-bottom))] sm:bottom-[calc(5.5rem+env(safe-area-inset-bottom))]'
+    : 'bottom-[calc(1.5rem+env(safe-area-inset-bottom))]'
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent('whatsapp_float_click', { page: pathname, tratamento: nomeTratamento })}
-      className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white rounded-pill shadow-card-hover hover:shadow-glow hover:scale-105 transition-all duration-200"
+      className={`fixed ${bottomClass} right-4 sm:right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white rounded-pill shadow-card-hover hover:shadow-glow hover:scale-105 transition-all duration-200`}
       aria-label="Falar pelo WhatsApp"
     >
       {/* Ícone */}

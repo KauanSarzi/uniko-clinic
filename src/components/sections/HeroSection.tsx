@@ -29,7 +29,7 @@ export default function HeroSection({
   showArc = false,
 }: HeroSectionProps) {
   const heightClass = {
-    full: 'min-h-[100dvh]',
+    full: 'min-h-screen',
     medium: 'min-h-[60vh]',
     small: 'min-h-[40vh] md:min-h-[50vh]',
   }[size]
