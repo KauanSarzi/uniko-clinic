@@ -42,20 +42,7 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light;
-  /*
-   * background-color = vinho (mesmo que o Footer).
-   * Quando o Safari iOS expande o viewport ao colapsar a toolbar, ou ao
-   * fazer rubber-band scroll no fim da página, a área revelada abaixo do
-   * Footer mostra esta cor — evitando o "espaço nude" após o rodapé.
-   */
-  background-color: #44020D;
-  /*
-   * overflow-x: clip não cria um novo scroll container (ao contrário de hidden),
-   * então não quebra position:sticky no Safari. O hidden é fallback para browsers
-   * muito antigos que não suportam clip.
-   */
   overflow-x: hidden;
-  overflow-x: clip;
 }
 
 body {
