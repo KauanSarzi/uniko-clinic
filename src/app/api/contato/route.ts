@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       recebidoEm: new Date().toISOString(),
     }
 
-    console.log('[Uniko Clinic] Novo contato recebido:', leadData)
+    console.log('[Uniko Clinic] Novo lead recebido pelo site.', { recebidoEm: leadData.recebidoEm })
 
     const apiKey = process.env.RESEND_API_KEY
     const toEmail = process.env.LEADS_TO_EMAIL
