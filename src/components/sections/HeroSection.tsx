@@ -83,14 +83,14 @@ export default function HeroSection({
         )}
 
         {ctaLabel && (
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             {isExternal ? (
               <a
                 href={ctaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleCtaClick}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-pill bg-gold-gradient font-sans text-vinho font-semibold text-base hover:shadow-glow hover:scale-105 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-pill bg-gold-gradient font-sans text-vinho font-semibold text-base hover:shadow-glow hover:scale-105 transition-all duration-200"
               >
                 {ctaLabel}
               </a>
@@ -98,7 +98,7 @@ export default function HeroSection({
               <Link
                 href={ctaUrl}
                 onClick={handleCtaClick}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-pill bg-gold-gradient font-sans text-vinho font-semibold text-base hover:shadow-glow hover:scale-105 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-pill bg-gold-gradient font-sans text-vinho font-semibold text-base hover:shadow-glow hover:scale-105 transition-all duration-200"
               >
                 {ctaLabel}
               </Link>
